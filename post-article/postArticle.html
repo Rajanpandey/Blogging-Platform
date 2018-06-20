@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Post a new article</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Import CSS written by me -->
+    <link rel="stylesheet" type="text/css" href="postArticle.css">
+</head>
+
+<body>
+    <br/>
+    <!-- Form control -->
+    <div class="container form-control">
+        <form id="form" action="submit.php" onsubmit="return getContent()" method="POST" enctype="multipart/form-data">
+
+            <!-- Title of the post -->
+            <div>
+                <input class="title" type="text" name="title" placeholder="Title" minlength="20" maxlength="100">
+            </div>
+            <!-- Title of the post ends -->
+
+            <hr/>
+
+
+            <!-- Text formatting tools -->
+            <div class>
+               <!-- Tools for bold, italic, underline and strikethrough -->
+                <a id="tool" class="btn" title="Bold" onclick="doRichEditCommand('bold')"><i class="fa fa-bold grey"></i></a>
+                <a id="tool" class="btn" title="Ialic" onclick="doRichEditCommand('italic')"><i class="fa fa-italic grey"></i></a>
+                <a id="tool" class="btn" title="Underline" onclick="doRichEditCommand('underline')"><i class="fa fa-underline grey"></i></a>
+                <a id="tool" class="btn" title="Strikethrough" onclick="doRichEditCommand('strikeThrough')"><i class="fa fa-strikethrough grey"></i></a>
+                
+                <div class="the-editor-toolbar-separator"></div>
+                
+                <!-- Tools for align left, center, right and justify -->
+                <a id="tool" class="btn" title="Align Left" onclick="doRichEditCommand('justifyLeft')"><i class="fa fa-align-left grey"></i></a>
+                <a id="tool" class="btn" title="Align Center" onclick="doRichEditCommand('justifyCenter')"><i class="fa fa-align-center grey"></i></a>
+                <a id="tool" class="btn" title="Align Right" onclick="doRichEditCommand('justifyRight')"><i class="fa fa-align-right grey"></i></a>
+                <a id="tool" class="btn" title="Justify" onclick="doRichEditCommand('justifyFull')"><i class="fa fa-align-justify grey"></i></a>
+                
+                <div class="the-editor-toolbar-separator"></div>
+                
+                <!-- Tools for link, unlick, indent and outdent -->
+                <a id="tool" class="btn" title="Link" onclick="link()"><i class="fa fa-link grey"></i></a>
+                <a id="tool" class="btn" title="Unlink" onclick="doRichEditCommand('unlink')"><i class="fa fa-unlink"></i></a>
+                <a id="tool" class="btn" title="Indent" onclick="doRichEditCommand('indent')"><i class="fa fa-indent"></i></a>
+                <a id="tool" class="btn" title="Outdent" onclick="doRichEditCommand('outdent')"><i class="fa fa-outdent"></i></a>
+                
+                <div class="the-editor-toolbar-separator"></div>
+                
+                <!-- Tools for unordered list, ordered list, superscrip and subscript -->
+                <a id="tool" class="btn" title="Unordered List" onclick="doRichEditCommand('insertUnorderedList')"><i class="fa fa-list-ul grey"></i></a>
+                <a id="tool" class="btn" title="Ordered List" onclick="doRichEditCommand('insertOrderedList')"><i class="fa fa-list-ol grey"></i></a>
+                <a id="tool" class="btn" title="Superscript" onclick="doRichEditCommand('superscript')"><i class="fa fa-superscript grey"></i></a>
+                <a id="tool" class="btn" title="Subscript" onclick="doRichEditCommand('subscript')"><i class="fa fa-subscript grey"></i></a>
+                
+                <div class="the-editor-toolbar-separator"></div>
+                
+                <!-- Tools for font face, size and color -->
+                <select id="droptool" onchange="doRichEditCommand('fontName',this.value)">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Verdana">Verdana</option>
+                 </select>
+                <select id="droptool" onchange="doRichEditCommand('fontSize',this.value)" title="font size">
+                    <option value="3">3</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                 </select>
+                <input id="droptool" type="color" onchange="doRichEditCommand('foreColor',this.value)" />
+                
+                <div class="the-editor-toolbar-separator"></div>
+                
+                <!-- Tools for undo and redo -->
+                <a id="tool" class="btn" title="Undo" onclick="doRichEditCommand('undo')"><i class="fa fa-undo grey"></i></a>
+                <a id="tool" class="btn" title="Redo" onclick="doRichEditCommand('redo')"><i class="fa fa-repeat grey"></i></a>
+                
+                <div class="the-editor-toolbar-separator"></div>
+                
+                <!-- Tool for adding an image -->
+                <a id="tool" class="btn" title="Insert Image URL" onclick="insertImage()"><i class="fa fa-image grey"></i></a>
+            </div>
+            <!-- Text formatting tools ends -->
+
+            <hr/>
+
+            <!-- Body of he post -->
+            <!-- Make it content editable attribute true so that we can edit inside the div tag and also enable execCommand to edit content inside it.-->
+            <div class="body" id="my-content" contenteditable="true" spellcheck="false">
+            </div><br/>
+            <!-- Body of he post ends -->
+
+            <textarea name="body" id="my-textarea" style="display:none"></textarea>
+            <textarea name="meta" id="my-meta" style="display:none"></textarea>
+
+            <!-- Submit button -->
+            <div>
+                <b>Select a title image:</b> <input type="file" name="fileToUpload" id="fileToUpload" accept="image/gif, image/jpeg, image/png" required><br/><br/>
+                <input type="submit" class="btn btn-info" value="Publish">
+            </div>
+            <!-- Submit button ends-->   
+                  
+        </form>
+    </div>
+    <!-- Form control ends -->
+
+
+
+    <script>
+        window.addEventListener("load", function() {
+            //first check if execCommand and contentEditable attribute is supported or not.
+            if (document.contentEditable != undefined && document.execCommand != undefined) {
+                alert("HTML5 Document Editing API Is Not Supported");
+            } else {
+                document.execCommand('styleWithCSS', false, true);
+            }
+        }, false);
+
+        function doRichEditCommand(aName, aArg) {
+            document.execCommand(aName, false, aArg);
+        }
+
+        function link() {
+            var url = prompt("Enter the URL");
+            document.execCommand("createLink", false, url);
+        }
+
+        function insertImage() { //makes the selected text as hyperlink.                           
+            var url = prompt("Enter the image URL");
+            document.execCommand("insertImage", false, url);
+        }
+
+        function getContent() {
+            document.getElementById("my-textarea").value = document.getElementById("my-content").innerHTML;
+            
+            var div = document.getElementById('my-content');
+            document.getElementById("my-meta").value = div.textContent;
+        }
+
+
+
+        //displays HTML of the output
+        function displayhtml() {
+            //set textContent of pre tag to the innerHTML of editable div. textContent can take any form of text and display it as it is without browser interpreting it. It also preserves white space and new line characters.
+            document.getElementsByClassName("htmloutput")[0].textContent = document.getElementsByClassName("editor")[0].innerHTML;
+        }
+
+    </script>
+
+</body>
+
+</html>

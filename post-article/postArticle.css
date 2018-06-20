@@ -1,0 +1,70 @@
+.body {
+    width: 100%;
+    height: 65vh;
+    background-color: white;
+    overflow: auto;
+}
+
+[contenteditable] { padding: 5px; outline: 0px solid transparent; border-radius: 3px; }
+[contenteditable]:not(:focus) { border: 1px solid #ddd; }
+[contenteditable]:focus { border: 1px solid #51a7e8; box-shadow: inset 0 1px 2px rgba(0,0,0,0.075),0 0 5px rgba(81,167,232,0.5); }
+
+.form-control {
+    border-color: transparent;
+}
+
+.title {
+    border: none;
+    overflow: auto;
+    font-size: 150%;
+    font-weight: bold;
+    width: 100%;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #595959;
+}
+
+::placeholder {
+    font-size: 150%;
+    font-family: serif;
+    padding-top: 10px;
+    color: #737373;
+}
+
+hr {
+    margin: 8px;
+}
+
+.body {
+    padding-top: 2.5px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#tool {
+    background-color: white;
+    font-size: 14px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.grey {
+    color: 	#595959;
+}
+
+.the-editor-toolbar-separator{
+  display: inline;
+  margin: 0 6px;
+  color: lighten(#444, 90%);
+}
+
+#droptool {
+    background-color: white;
+    font-size: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: transparent;
+}
