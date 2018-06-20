@@ -1,6 +1,7 @@
 # blogging-platform
 
 Complete responsive blogging platform. 
+
 Features:
 1. Text Editor: Supports tons of text formatting toolbars and image drag and drop
 2. Only 9 articles are fetched at once.
