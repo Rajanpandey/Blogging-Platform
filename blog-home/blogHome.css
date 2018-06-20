@@ -1,0 +1,65 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", sans-serif
+}
+
+.posts {
+    height: 450px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+
+.posts:hover {
+    -ms-transform: scale(1.02); /* IE 9 */
+    -webkit-transform: scale(1.02)); /* Safari 3-8 */
+    transform: scale(1.02); 
+}
+
+.articleImage {
+    width: 100%;
+    height: 250px;;
+}
+
+#description {
+    padding-top: 10px;
+}
+
+.meta a:link {
+    color: black;
+}
+
+.meta a:visited {
+    color: black;
+}
+
+.meta a:hover {
+    color: #0066cc;
+}
+
+.meta a:active {
+    color: #003cb3;
+}
+
+.postArticle {
+    color: aqua;
+}
+
+#description span {
+    position: relative;
+    margin-left: 0px;  
+    display: inline-block;
+    bottom: 10px;
+}
+
+.sidePanel {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.trending {
+    text-align: center;    
+}
+
+.trendingPanel {    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

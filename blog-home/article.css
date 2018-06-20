@@ -1,0 +1,146 @@
+p img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.name {
+    text-align: center;
+    font-family: cursive;
+    font-size: 1.3em;
+    color: #0047b3;
+}
+
+.organization {
+    text-align: center;
+    font-family: cursive;
+    font-size: 1.2em;
+    color: #1a75ff;
+}
+
+.title {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding-bottom: -10px;
+}
+
+.body {
+    text-align: justify;
+}
+
+.author {
+    text-align: left;
+}
+
+.date {
+    text-align: right;
+}
+
+.views {
+    text-align: right;
+}
+
+.authorBanner {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -35px;    
+}
+
+.authorImage {
+    width: 200vw;
+    height: 20vh;
+    background-color: #fff;
+    padding: 5px;    
+}
+
+.authorPanel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.trendingPanel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.details {
+    text-align: center;
+}
+
+.share {
+    text-align: right;
+}
+
+@media (max-width: 75em) {
+    .sharePanel {
+        display: none;
+    }
+}
+
+.views a:link {
+    color: #66b3ff;
+}
+
+.views a:visited {
+    color: #66b3ff;
+}
+
+.views a:hover {
+    color: #003366;
+}
+
+.views a:active {
+    color: darkblue;
+}
+
+
+.sharePanel {
+    position: fixed;
+}
+
+.sharePanel a {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sharePanel a:link {
+    color: black;
+}
+
+.sharePanel a:visited {
+    color: black;
+}
+
+.sharePanel a:hover {
+    color: #0066cc;
+}
+
+.sharePanel a:active {
+    color: darkblue;
+}
+
+.share a:link {
+    color: #66b3ff;
+}
+
+.share a:visited {
+    color: #66b3ff;
+}
+
+.share a:hover {
+    color: #003366;
+}
+
+.share a:active {
+    color: darkblue;
+}
