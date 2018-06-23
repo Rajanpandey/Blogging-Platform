@@ -139,6 +139,28 @@ $conn->close();
             <a title="Linkedin" href="http://www.linkedin.com/shareArticle?url=http://192.168.1.29/blog/blog-home/article.php?url=<?php echo $array[0]['url']?>&title=<?php echo $array[0]['title'] ?>&summary=<SUMMARY>&source=<SOURCE_URL>"><i class="fa fa-linkedin"></i></a>
        </p>
        </div>
+    
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://blognow.000webhostapp.com/blog-home/article.php?url=<?php echo $url ?>';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '{{content_id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-ylnduzqz1q.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>       
+
 </div>
 <!-- Middle Panel ends-->
 
